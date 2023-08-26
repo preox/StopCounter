@@ -22,12 +22,11 @@
             <version>20230227</version>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>sax</groupId>-->
-        <!--            <artifactId>sax</artifactId>-->
-        <!--            <version>2.0.1</version>-->
-        <!--        </dependency>-->
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>32.1.2-jre</version>
+        </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>

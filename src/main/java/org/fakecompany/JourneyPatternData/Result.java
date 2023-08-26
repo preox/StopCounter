@@ -5,13 +5,33 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Result {
     @JsonProperty("LineNumber")
-    public int lineNumber;
+    private int lineNumber;
     @JsonProperty("DirectionCode")
-    public String directionCode;
+    private int directionCode;
     @JsonProperty("JourneyPatternPointNumber")
-    public int journeyPatternPointNumber;
+    private int journeyPatternPointNumber;
     @JsonProperty("LastModifiedUtcDateTime")
-    public String lastModifiedUtcDateTime;
+    private String lastModifiedUtcDateTime;
     @JsonProperty("ExistsFromDate")
-    public String existsFromDate;
+    private String existsFromDate;
+
+    public int getLineNumber() {
+        return lineNumber;
+    }
+
+    public int getDirectionCode() {
+        return directionCode;
+    }
+
+    public int getJourneyPatternPointNumber() {
+        return journeyPatternPointNumber;
+    }
+
+    public String getLastModifiedUtcDateTime() {
+        return lastModifiedUtcDateTime;
+    }
+
+    public String getExistsFromDate() {
+        return existsFromDate;
+    }
 }

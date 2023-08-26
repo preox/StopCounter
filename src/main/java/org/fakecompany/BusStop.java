@@ -3,33 +3,21 @@ package org.fakecompany;
 public class BusStop {
     private int stopId;
     private String stopPointName;
+    private int stopAreaNumber;
 
-    public BusStop(int stopId, String stopPointName) {
+    public BusStop(int stopId, String stopPointName, int stopAreaNumber) {
         this.stopId = stopId;
         this.stopPointName = stopPointName;
-    }
-
-    public BusStop(int stopId) {
-        this.stopId = stopId;
+        this.stopAreaNumber = stopAreaNumber;
     }
 
     public int getStopId() {
         return stopId;
     }
 
-    public void setStopPointName(String stopPointName) {
-        this.stopPointName = stopPointName;
-    }
 
     public String getStopPointName() {
         return stopPointName;
     }
 
-    @Override
-    public String toString() {
-        return "BusStop{" +
-                "stopPointNumber=" + stopId +
-                ", stopPointName='" + stopPointName + '\'' +
-                '}';
-    }
 }

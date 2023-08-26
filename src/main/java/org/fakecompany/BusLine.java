@@ -1,48 +1,38 @@
 package org.fakecompany;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class BusLine {
 
     private int lineNumber;
     private String lineDesignation;
 
-    private List<BusStop> stops;
+
+    HashSet<String> stopPointNames = new HashSet<>();
 
     public BusLine(int lineNumber, String lineDesignation) {
         this.lineNumber = lineNumber;
         this.lineDesignation = lineDesignation;
-        stops = new ArrayList<>();
     }
 
     public int getLineNumber() {
         return lineNumber;
     }
 
-    public String getLineDesignation() {
-        return lineDesignation;
+
+    public void addBusStopName(String name) {
+        stopPointNames.add(name);
     }
 
-    public void addBusStop(BusStop busStop) {
-        stops.add(busStop);
-    }
-
-    public List<BusStop> getStops(){
-        return stops;
-    }
-
-    public int getStopCount(){
-        return stops.size();
+    public int getStopCount() {
+        return stopPointNames.size();
     }
 
 
     @Override
     public String toString() {
-        return "BusLine{" +
+        return "BusLine " +
                 "lineNumber=" + lineNumber +
-                ", lineDesignation='" + lineDesignation + '\'' +
-                ", stop count: " + stops.size() +
-                '}';
+                ", number of stops='" + stopPointNames.size();
     }
 }
