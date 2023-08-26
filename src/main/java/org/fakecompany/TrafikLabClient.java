@@ -12,20 +12,28 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class TrafikLabClient {
 
     private String apiKey;
-    private final static String baseURI = "https://api.sl.se/api2/LineData.json";
+    private static String propFileName = "app.properties";
+    private String baseURI;
     private boolean useMockedData = false;
+    public TrafikLabClient() {
 
-    public TrafikLabClient(Optional<String> keyFromProperties) {
-        if (keyFromProperties.isEmpty() || keyFromProperties.get().isEmpty()) {
-            useMockedData = true;
-        } else {
-            apiKey = keyFromProperties.get();
+        try {
+            PropertiesReader propReader = new PropertiesReader(propFileName);
+            apiKey = propReader.getProperty("api-key");
+            if (apiKey.isEmpty() || apiKey.isBlank()){
+                System.out.println("No api-key supplied, using mocked data");
+                useMockedData = true;
+            }
+            baseURI = propReader.getProperty("baseURI");
+            System.out.println("BaseURI: " + baseURI);
+
+        } catch (Exception ex) {
+            throw new RuntimeException("Problems while reading properties-file!");
         }
 
     }

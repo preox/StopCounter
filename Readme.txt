@@ -1,4 +1,5 @@
-
+Configuration
+------------
 Provide a api-key from Trafiklabs api in app.properties file.
 If no key is provided, or if user would like to use json-data that has already been downloaded, supply those as follows:
 
@@ -15,3 +16,8 @@ https://api.sl.se/api2/LineData.json?model=JourneyPatternPointOnLine&key=<KEY>&D
 MockedStopdataResponse.json
 Should contain the json-response from a
 https://api.sl.se/api2/LineData.json?model=Stop&key=<KEY>&DefaultTransportModeCode=BUS request
+
+
+Running
+------------
+mvn exec:java
